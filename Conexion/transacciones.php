@@ -5,10 +5,10 @@ if(!isset($_POST["accion"])){
 else{
     include("../Conexion/cn.php");
     if($_POST["accion"] == "getProductos"){
-            $cmd=" select producto.Id, producto.Nombre as NombreProducto,
+            $cmd= 'select producto.Id, producto.Nombre as NombreProducto,
             proveedor.Nombre as NombreProveedor, producto.Stock
             from Productos as producto inner join Proveedores
-            as proveedor on producto.Id_Proveedor = proveedor.Id";
+            as proveedor on producto.Id_Proveedor = proveedor.Id';
 
             $resultado = $conexion->query($cmd);
             $i = 0;
